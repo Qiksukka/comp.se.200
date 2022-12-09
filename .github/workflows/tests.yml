@@ -1,0 +1,10 @@
+name: run-tests
+on: [push]
+jobs:
+  run tests:
+    runs-on: ubuntu-latest
+    steps:
+      with:
+        node-version: '16'
+      - run: npm ci
+      - run: npm tests
