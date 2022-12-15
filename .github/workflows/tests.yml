@@ -10,5 +10,11 @@ jobs:
           node-version: 16
       - name: Install modules
         run: npm ci
+      - name: Make test coverage
+        run: make test-coverage
       - name: Run tests
         run: npm test
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+            github-token: ${{ github.token }}
