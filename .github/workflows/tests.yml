@@ -3,7 +3,6 @@ on: [push]
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -13,6 +12,7 @@ jobs:
         run: npm install
       - name: Run tests, create lcov file
         run: npm test --coverage
+        continue-on-error: true
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@1.1.3
         with:
