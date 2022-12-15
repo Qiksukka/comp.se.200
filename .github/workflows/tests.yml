@@ -11,7 +11,7 @@ jobs:
       - name: Install modules
         run: npm install
       - name: Run tests, create lcov file
-        run: npm test --coverage
+        run: npm -s test --coverage
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@1.1.3
         with:
