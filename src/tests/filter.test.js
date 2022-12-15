@@ -23,3 +23,19 @@ test("filters items correctly when predicate is bool", () => {
     const filteredItems = filter(items, ({inStock}) => inStock)
     expect(filteredItems.length).toBe(3)
 })
+
+test("returns empty array when given empty array", () => {
+    const items = []
+
+    const filteredItems = filter(items, ({inStock}) => inStock)
+
+    expect(filteredItems.length).toBe(0)
+})
+
+test("returns empty array when given null as array", () => {
+    const items = null
+
+    const filteredItems = filter(items, ({inStock}) => inStock)
+
+    expect(filteredItems.length).toBe(0)
+})
