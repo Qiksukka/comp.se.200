@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "jest": {
+    "collectCoverage": true
+  },
   "scripts": {
     "test": "jest --coverage"
   },
