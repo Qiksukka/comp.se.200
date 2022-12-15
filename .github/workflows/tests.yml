@@ -11,7 +11,7 @@ jobs:
       - name: Install modules
         run: npm ci
       - name: Run tests and pipe it to lcov file
-        run: jest --coverage && coveralls < coverage/lcov.info
+        run: npm test --coverage && coveralls < coverage/lcov.info
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1.1.2
         with:
