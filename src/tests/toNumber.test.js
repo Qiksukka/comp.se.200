@@ -36,3 +36,17 @@ test('Hexy numbers', () => {
 test('Binary numbers', () => {
     expect(toNumber(0b11001101010101001)).toBe(105129)
 });
+
+test('Symbol as a number', () => {
+    let id = Symbol("7");
+    expect(toNumber(id)).toStrictEqual(NaN)
+});
+
+test('Object as a number', () => {
+    let obj = "777";
+    expect(toNumber(obj)).toStrictEqual(NaN)
+});
+
+test('String', () => {
+    expect(toNumber('string')).toStrictEqual(NaN)
+});
