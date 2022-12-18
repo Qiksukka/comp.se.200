@@ -11,3 +11,7 @@ test("Rounds to correct decimal when positive decimal is given", () => {
 test("Rounds to correct decimal when positive decimal is given", () => {
     expect(ceil(1452.4452, -2)).toBe(1500)
 })
+
+test('adding non-number throws exception', () => {
+    expect(() => ceil(50.50,"jotain")).toThrow()
+})

@@ -9,6 +9,7 @@ test("calculates amount of items correctly, when constraint is a bool", () => {
     
       const result = countBy(users, value => value.active);
       expect(result.true).toBe(2)
+      expect(result.false).toBe(1)
 })
 
 test("calculates amount of items correctly, when constraint is a string", () => {
@@ -25,6 +26,17 @@ test("calculates amount of items correctly, when constraint is a string", () => 
 
 test("returns empty array when items is empty", () => {
     const items = []
+
+    const categoriesAmount = countBy(items, product => product.category)
+    expect(categoriesAmount.length).toBe(0)
+});
+
+test("returns empty array when object field does not exist", () => {
+    const items = [
+        {},
+        {},
+        {}
+    ]
 
     const categoriesAmount = countBy(items, product => product.category)
     expect(categoriesAmount.length).toBe(0)
