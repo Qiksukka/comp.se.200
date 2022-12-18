@@ -44,7 +44,7 @@ test('Symbol as a number', () => {
 
 test('Object as a number', () => {
     let obj = "777";
-    expect(toNumber(obj)).toStrictEqual(NaN)
+    expect(toNumber(obj)).toStrictEqual(777)
 });
 
 test('String', () => {
