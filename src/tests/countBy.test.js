@@ -19,25 +19,25 @@ test("calculates amount of items correctly, when constraint is a string", () => 
         {name: "TV", category: "electronics"}
     ]
 
-    const categoriesAmount = countBy(items, product => product.category)
-    expect(categoriesAmount.electronics).toBe(2)
-    expect(categoriesAmount.shoes).toBe(1)
+    const result = countBy(items, product => product.category)
+    expect(result.electronics).toBe(2)
+    expect(result.shoes).toBe(1)
 });
 
-test("returns empty array when items is empty", () => {
+test("returns empty object when items is empty", () => {
     const items = []
 
-    const categoriesAmount = countBy(items, product => product.category)
-    expect(categoriesAmount.length).toBe(0)
+    const result = countBy(items, product => product.category)
+    expect(JSON.stringify(result)).toBe('{}');
 });
 
-test("returns empty array when object field does not exist", () => {
+test("returns empty object when object field does not exist", () => {
     const items = [
         {},
         {},
         {}
     ]
 
-    const categoriesAmount = countBy(items, product => product.category)
-    expect(categoriesAmount.length).toBe(0)
+    const result = countBy(items, product => product.category)
+    expect(JSON.stringify(result)).toBe('{}');
 });
