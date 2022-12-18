@@ -9,7 +9,7 @@ test('adds positive number to negative correctly', () => {
 });
 
 test('adds negative number to negative correctly', () => {
-    expect(add(-2,-2)).toBe(-2)
+    expect(add(-2,-2)).toBe(-4)
 });
 
 test('adds positive number to positive correctly', () => {

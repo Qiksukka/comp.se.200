@@ -1,7 +1,7 @@
 import ceil from "../ceil";
 
 test("Rounds to whole number when only first parameter given", () => {
-    expect(ceil(2.04)).toBe(2)
+    expect(ceil(2.04)).toBe(3)
 });
 
 test("Rounds to correct decimal when positive decimal is given", () => {
